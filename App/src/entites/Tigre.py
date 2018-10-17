@@ -6,14 +6,11 @@ from Bondissant import Bondissant
 
 class Tigre ( Bondissant ) :
 	
-	def __init__( self , couleur ) :
+	def __init__( self , couleur , position ) :
 		
-		Bondissant.__init__( self , couleur , 6 )
+		Bondissant.__init__( self , couleur , 6 , position = None )
 		
 	
-	def __bondir__() :
-		pass
-		
 	def __str__( self ) :
 		return 'Tigre >>> ' +  Bondissant.__str__( self )
 		

@@ -4,9 +4,10 @@
 
 class Animal :
 	
-	def __init__( self , couleur , force ) :
+	def __init__( self , couleur , force , position = None ) :
 		self.couleur = couleur
 		self.force = force
+		self.position = position
 		
 	def __deplacer__( self ) :
 		pass

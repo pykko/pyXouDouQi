@@ -7,9 +7,9 @@ from Animal import Animal
 
 class Panthere ( Animal ) :
 	
-	def __init__( self , couleur ) :
+	def __init__( self , couleur , position ) :
 		
-		Animal.__init__( self , couleur , 5 )
+		Animal.__init__( self , couleur , 5 , position = None )
 		
 	
 		

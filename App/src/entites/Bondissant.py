@@ -7,9 +7,9 @@ from Animal import Animal
 
 class Bondissant ( Animal ) :
 	
-	def __init__( self , couleur , force ) :
+	def __init__( self , couleur , force , position = None ) :
 		
-		Animal.__init__( self , couleur , force )
+		Animal.__init__( self , couleur , force , position )
 		
 	def bondir( self ) :
 		pass
