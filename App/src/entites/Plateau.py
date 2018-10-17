@@ -2,6 +2,7 @@
 # coding: utf-8
 
 from Case import Case
+from Direction import Direction
 from Position import Position
 
 class Plateau :
@@ -41,6 +42,18 @@ class Plateau :
 			self.cases[ 0 ][ 3 ].terrain = Case.TANIERE
 			self.cases[ 8 ][ 3 ].terrain = Case.TANIERE
 
+	
+	estBordEtang( self , case ) :
+		for direction in ( Direction.NORD , Direction.EST , Direction.SUD , Direction.OUEST ) :
+			if case.terrain = Case.TERRE :
+				if case.getVoisine( direction ) != NULL and case.getVoisine( direction ).terrain == Case.EAU :
+					return True
+		else return False
+		
+	
+	getBordEtangOppose( self , case ) :
+		pass
+		
 	
 		
 				

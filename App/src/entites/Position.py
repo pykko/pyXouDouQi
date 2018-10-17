@@ -11,21 +11,21 @@ class Position :
 		self.colonne = colonne
 		
 		
-	def getNord( self ) :
+	def getNord( self , limite = 1 ) :
 		
 		ligne = self.ligne - 1
 		
-		if ligne < 1 :
+		if ligne < limite :
 			return None
 		else :
 			return Position( ligne , self.colonne )
 		
 	
-	def getOuest( self ) :
+	def getOuest( self , limite = 1) :
 		
 		colonne = self.colonne - 1
 		
-		if colonne < 1 :
+		if colonne < limite :
 			return None
 		else :
 			return Position( self.ligne , colonne )
