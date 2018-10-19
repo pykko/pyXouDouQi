@@ -58,7 +58,10 @@ class Etang :
 		positions = []
 		
 		for l in range( self.ligne , self.ligne + self.hauteur ) :
-			positions.append( [] )
+			for c in range( self.colonne , self.colonne + self.largeur ) :
+				positions.append( Position( l , c ) )
+			
+		return positions
 		
 		
 		

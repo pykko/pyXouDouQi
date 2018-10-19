@@ -41,7 +41,7 @@ class Position :
 			return Position( ligne , self.colonne )
 		
 		
-	def getEst( self , limite = None) :
+	def getEst( self , limite = None ) :
 		
 		colonne = self.colonne + 1
 		

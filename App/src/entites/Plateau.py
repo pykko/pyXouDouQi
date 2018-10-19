@@ -4,6 +4,7 @@
 from Case import Case
 from Direction import Direction
 from Position import Position
+from Etang import Etang
 
 class Plateau :
 
@@ -11,9 +12,11 @@ class Plateau :
 	NB_COLONNES = 7
 	
 	
-	def __init__( self ) :
+	def __init__( self , joueurBlanc = None , joueurNoir = None ) :
 		
 		self.cases = []
+		self.joueurBlanc = joueurBlanc
+		self.joueurNoir = joueurNoir
 		self.creer()
 		self.etangs = ( Etang( 4 , 2 , 3 , 2 ) , Etang( 4 , 5 , 3 , 2 ) )
 		
@@ -43,16 +46,20 @@ class Plateau :
 			self.cases[ 7 ][ 3 ].terrain = Case.PIEGE
 			
 			self.cases[ 0 ][ 3 ].terrain = Case.TANIERE
+			self.cases[ 0 ][ 3 ].joueur = self.joueurNoir
+			
 			self.cases[ 8 ][ 3 ].terrain = Case.TANIERE
+			self.cases[ 8 ][ 3 ].joueur = self.joueurBlanc
 			
 
 	
 	def estBordEtang( self , case ) :
 		for direction in ( Direction.NORD , Direction.EST , Direction.SUD , Direction.OUEST ) :
-			if case.terrain = Case.TERRE :
+			if case.terrain == Case.TERRE :
 				if case.getVoisine( direction ) != NULL and case.getVoisine( direction ).terrain == Case.EAU :
 					return True
-		else return False
+		else :
+			return False
 		
 	
 	def getBordEtangOppose( self , case ) :
@@ -74,6 +81,7 @@ class Plateau :
 					visu += 'X'
 				elif self.cases[ i ][ j ].terrain == Case.TANIERE :
 					visu += 'O'
+				
 					
 			print( visu )
 				
