@@ -50,7 +50,13 @@ class Position :
 		else :
 			return Position( self.ligne , colonne )
 		
-	
+			
+	def __eq__( self , autre ) :
+		if self.ligne == autre.ligne and self.colonne == autre.colonne :
+			return True
+		else :
+			return False
+		
 		
 	def __str__( self ) :
 		return '({0},{1})'.format( self.ligne , self.colonne )
@@ -64,5 +70,12 @@ if __name__ == '__main__' :
 	print( p.getEst() )
 	print( p.getSud() )
 	print( p.getOuest() )
+	
+	p1 = Position( 4 , 5 )
+	p2 = Position( 3 , 5 )
+	p3 = Position( 4 , 5 )
+	
+	print( p1 == p2 )
+	print( p1 == p3 )
 	
 	

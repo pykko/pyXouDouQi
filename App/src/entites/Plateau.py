@@ -15,6 +15,7 @@ class Plateau :
 		
 		self.cases = []
 		self.creer()
+		self.etangs = ( Etang( 4 , 2 , 3 , 2 ) , Etang( 4 , 5 , 3 , 2 ) )
 		
 		
 	def creer( self ) :
@@ -24,6 +25,8 @@ class Plateau :
 			
 			for j in range( Plateau.NB_COLONNES ) :
 				self.cases[ -1 ].append( Case( Position( i + 1 , j + 1 ) ) )
+				
+		
 				
 		for i in range( 3 , 6 ) :
 			self.cases[ i ][ 1 ].terrain = Case.EAU
@@ -41,9 +44,10 @@ class Plateau :
 			
 			self.cases[ 0 ][ 3 ].terrain = Case.TANIERE
 			self.cases[ 8 ][ 3 ].terrain = Case.TANIERE
+			
 
 	
-	estBordEtang( self , case ) :
+	def estBordEtang( self , case ) :
 		for direction in ( Direction.NORD , Direction.EST , Direction.SUD , Direction.OUEST ) :
 			if case.terrain = Case.TERRE :
 				if case.getVoisine( direction ) != NULL and case.getVoisine( direction ).terrain == Case.EAU :
@@ -51,7 +55,7 @@ class Plateau :
 		else return False
 		
 	
-	getBordEtangOppose( self , case ) :
+	def getBordEtangOppose( self , case ) :
 		pass
 		
 	
